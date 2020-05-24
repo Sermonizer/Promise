@@ -1,0 +1,61 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-05-23 15:29:14
+ * @LastEditTime: 2020-05-24 09:56:57
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Test\index.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Promise实现</title>
+  </head>
+  <body>
+    <script src="./lib/Promise.js"></script>
+    <script>
+      const p = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          // resolve(1);
+        reject(2)
+        }, 100);
+      }).then(
+        (value) => {
+          console.log("onResolved1()", value);
+        },
+        (reason) => {
+          console.log("onRejected1()", reason);
+          throw 3
+        }
+      ).then(
+        (value) => {
+          console.log("onResolved2()", value);
+        },
+        (reason) => {
+          console.log("onRejected2()", reason);
+          return new Promise((resolve, reject) => {
+            reject(4)
+          })
+        }
+      ).catch(
+        reason => {
+          console.log("onRejected3()", reason);
+          // 中断promise链
+          return new Promise(() => {})
+        }
+      ).then(
+        (value) => {
+          console.log("onResolved4()", value);
+        },
+        (reason) => {
+          console.log("onRejected4()", reason);
+          return new Promise((resolve, reject) => {
+            reject(4)
+          })
+        }
+      )
+    </script>
+  </body>
+</html>
