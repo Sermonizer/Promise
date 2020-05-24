@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-05-23 15:29:14
- * @LastEditTime: 2020-05-24 16:12:53
+ * @LastEditTime: 2020-05-24 16:48:08
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Test\index.html
@@ -19,14 +19,29 @@
       const p1 = Promise.resolve(1);
       const p2 = Promise.resolve(Promise.resolve(2));
       const p3 = Promise.resolve(Promise.reject(3));
+      const p4 = new Promise(resolve => {
+        setTimeout(() => {
+          Promise.resolve(4);
+        }, 1000)
+      });
       const pAll = Promise.all([p1, p2]);
+      const pRace = Promise.race(5);
 
-      pAll.then(
-        (values) => {
-          console.log("pAll成功", values);
+      // pAll.then(
+      //   (values) => {
+      //     console.log("pAll成功", values);
+      //   },
+      //   (reason) => {
+      //     console.log("pAll失败", reason);
+      //   }
+      // );
+
+      pRace.then(
+        (value) => {
+          console.log("pRace成功", value);
         },
         (reason) => {
-          console.log("pAll失败", reason);
+          console.log("pRace失败", reason);
         }
       );
     </script>
