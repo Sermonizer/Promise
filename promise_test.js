@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-05-23 15:25:02
- * @LastEditTime: 2020-07-10 20:14:15
+ * @LastEditTime: 2020-07-29 14:42:11
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Test\promise_test.js
@@ -36,6 +36,6 @@ new Promise((resolve, reject) => {
 //     console.log("任务3的结果", value);
 //   });
 
-Promise.retry = ()
+// Promise.retry = ()
 
 console.log("-------------");

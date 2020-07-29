@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-05-23 15:29:14
- * @LastEditTime: 2020-07-10 15:39:28
+ * @LastEditTime: 2020-07-29 17:57:59
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Test\index.html
@@ -50,6 +50,21 @@
       })) 
       
     </script> -->
-    <script src="./promise_test.js"></script>
+    <script>
+      new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve(1)
+        }, 1000);
+      }).then(value => {
+        setTimeout(() => {
+          console.log("Yibu2");
+          return 2
+        }, 1000);
+      }).then(value => {
+        console.log("3", value);
+      })
+      console.log("---------");
+
+    </script>
   </body>
 </html>
