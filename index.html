@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-05-23 15:29:14
- * @LastEditTime: 2020-05-24 16:48:08
+ * @LastEditTime: 2020-07-10 15:39:28
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Test\index.html
@@ -14,7 +14,7 @@
     <title>Promise实现</title>
   </head>
   <body>
-    <script src="./lib/Promise.js"></script>
+    <!-- <script src="./lib/Promise.js"></script>
     <script>
       const p1 = Promise.resolve(1);
       const p2 = Promise.resolve(Promise.resolve(2));
@@ -44,6 +44,12 @@
           console.log("pRace失败", reason);
         }
       );
-    </script>
+
+      console.log(new Promise((resolve, reject) => {
+        reject(console.log("chenggong"))
+      })) 
+      
+    </script> -->
+    <script src="./promise_test.js"></script>
   </body>
 </html>
