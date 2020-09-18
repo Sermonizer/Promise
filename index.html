@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-05-23 15:29:14
- * @LastEditTime: 2020-07-29 17:57:59
+ * @LastEditTime: 2020-09-14 11:18:52
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Test\index.html
@@ -64,7 +64,8 @@
         console.log("3", value);
       })
       console.log("---------");
-
+      
+      Promise.resolve("a").then("b").then(Promise.resolve("c")).then(console.log)
     </script>
   </body>
 </html>
